@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
+import StackRoutes from './stackRoutes';
 import Home from '../pages/Home';
 import Contato from '../pages/Contato';
 import Cursos from '../pages/Cursos';
@@ -46,13 +47,14 @@ export default function App() {
 
             <Tab.Screen
                 name='Cursos'
-                component={Cursos}
+                component={StackRoutes}
                 options={{
-                    title: 'Cursos',
+                    title: 'cursos',
                     headerTintColor: 'black',
                     headerStyle: {
                         backgroundColor: 'white'
                     },
+                    headerShown: false,
                     tabBarIcon: ({ color, size }) => {
                         return (
                             <FontAwesome name='book' color='red' size={size}></FontAwesome>
